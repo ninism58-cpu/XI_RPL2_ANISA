@@ -1,0 +1,863 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff9fc;
+    color: #5d5364;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow: 0 3px 15px rgba(80, 50, 80, 0.08);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b8668c;
+}
+
+nav ul {
+    display: flex;
+    gap: 18px;
+
+    list-style: none;
+}
+
+nav ul li a {
+    color: #655c6b;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d47fa1;
+}
+
+
+/* ========================================
+   HERO / HALAMAN AWAL
+======================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 80px;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fbdce9,
+            #eee3f8,
+            #ddf4ee
+        );
+}
+
+
+/* FOTO PROFIL */
+
+.profile-photo {
+    width: 330px;
+    height: 330px;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 20px 45px rgba(90, 60, 90, 0.2);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* ANIMASI FOTO */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* TEXT HERO */
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text small {
+    color: #b45f84;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+
+    color: #604c70;
+
+    margin: 12px 0;
+}
+
+.hero-text h1 span {
+    color: #d47fa1;
+}
+
+.hero-text h2 {
+    font-size: 22px;
+
+    color: #796c7e;
+
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+
+    line-height: 1.8;
+}
+
+
+/* BUTTON */
+
+.button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #d47fa1;
+
+    color: white;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #bb678a;
+
+    transform: translateY(-4px);
+}
+
+
+/* ========================================
+   SECTION
+======================================== */
+
+section {
+    padding: 80px 8%;
+}
+
+.judul {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.judul small {
+    color: #d17c9f;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.judul h2 {
+    font-size: 34px;
+
+    color: #704f74;
+
+    margin: 8px 0;
+}
+
+.judul p {
+    color: #99919c;
+}
+
+
+/* ========================================
+   BIODATA
+======================================== */
+
+.biodata {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(90, 60, 90, 0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #915a7b;
+
+    margin-bottom: 20px;
+}
+
+.card p {
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+/* DATA BIODATA */
+
+.data {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px dashed #eadde6;
+}
+
+.data strong {
+    color: #865b78;
+}
+
+
+/* ========================================
+   GALERI
+======================================== */
+
+#galeri {
+    background: #fff3f8;
+}
+
+.gallery {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(90, 60, 90, 0.1);
+
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 15px 30px rgba(90, 60, 90, 0.15);
+}
+
+
+/* ========================================
+   PENDIDIKAN
+======================================== */
+
+.timeline {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.education {
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-left: 6px solid #d98aaa;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 20px rgba(90, 60, 90, 0.07);
+
+    transition: 0.3s;
+}
+
+.education:hover {
+    transform: translateX(7px);
+}
+
+.education h3 {
+    color: #8b5b78;
+
+    margin-bottom: 5px;
+}
+
+.education span {
+    color: #999;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   ORGANISASI
+======================================== */
+
+#organisasi {
+    background: #faf5fd;
+}
+
+.organization {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.organization-card {
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 7px 22px rgba(90, 60, 90, 0.08);
+
+    transition: 0.3s;
+}
+
+.organization-card:hover {
+    transform: translateY(-8px);
+
+    background: #fff1f7;
+}
+
+.organization-card .icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.organization-card h3 {
+    color: #8b5a78;
+
+    margin-bottom: 8px;
+}
+
+
+/* ========================================
+   KELEBIHAN
+======================================== */
+
+.advantages {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.advantage {
+    background: white;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(90, 60, 90, 0.08);
+
+    transition: 0.3s;
+}
+
+.advantage:hover {
+    transform: translateY(-8px);
+
+    background: #fff0f6;
+}
+
+.advantage .icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.advantage h3 {
+    color: #8c5978;
+
+    margin-bottom: 8px;
+}
+
+.advantage p {
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   PRESTASI
+======================================== */
+
+#prestasi {
+    background: #fffaf0;
+}
+
+.achievement {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.achievement-card {
+    padding: 28px;
+
+    background: #fff5d9;
+
+    border: 1px solid #f1dfb5;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-7px);
+}
+
+.number {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #e7c477;
+
+    color: white;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.achievement-card h3 {
+    color: #98773d;
+
+    margin-bottom: 8px;
+}
+
+
+/* ========================================
+   KOMPETENSI
+======================================== */
+
+.skills {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.skill {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 20px rgba(90, 60, 90, 0.07);
+}
+
+.skill-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+
+    color: #755672;
+}
+
+.bar {
+    width: 100%;
+
+    height: 12px;
+
+    background: #eee9ef;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+
+    border-radius: 20px;
+}
+
+
+/* WARNA PROGRESS */
+
+.html {
+    width: 90%;
+
+    background: #df96b4;
+}
+
+.css {
+    width: 85%;
+
+    background: #b7a5d8;
+}
+
+.office {
+    width: 88%;
+
+    background: #9bcfc0;
+}
+
+.design {
+    width: 78%;
+
+    background: #e5c17b;
+}
+
+
+/* ========================================
+   PORTOFOLIO
+======================================== */
+
+#portofolio {
+    background: #fff4f9;
+}
+
+.portfolio {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project {
+    background: white;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(90, 60, 90, 0.08);
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+}
+
+.project img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 23px;
+}
+
+.project-content h3 {
+    color: #8a5978;
+
+    margin-bottom: 8px;
+}
+
+.project-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: #f6e0eb;
+
+    color: #a05f80;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eadcf7,
+            #f8dce8
+        );
+
+    color: #6c5873;
+}
+
+footer h2 {
+    color: #765374;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 13px;
+
+    margin: 5px;
+}
+
+
+/* ========================================
+   RESPONSIVE / HP
+======================================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .biodata {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .organization {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .profile-photo {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .hero-text h2 {
+        font-size: 18px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .data {
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    .judul h2 {
+        font-size: 28px;
+    }
+
+}

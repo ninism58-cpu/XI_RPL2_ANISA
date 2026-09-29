@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile - Anisa</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8fc;
+            color: #5d5364;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #b8668c;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #665d6b;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d77fa3;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 80px;
+
+            padding: 80px 8%;
+
+            background: linear-gradient(
+                135deg,
+                #fbdce9,
+                #eee2f8,
+                #ddf4ee
+            );
+        }
+
+        .profile-photo {
+            width: 330px;
+            height: 330px;
+
+            padding: 10px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            box-shadow: 0 20px 50px rgba(100,70,100,0.2);
+
+            animation: naikTurun 4s infinite ease-in-out;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+
+        @keyframes naikTurun {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+        .hero-text {
+            max-width: 580px;
+        }
+
+        .hero-text small {
+            color: #b25f83;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            color: #604c70;
+            margin: 12px 0;
+        }
+
+        .hero-text h1 span {
+            color: #d47fa1;
+        }
+
+        .hero-text h2 {
+            color: #796b7e;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            background: #d47fa1;
+            color: white;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #bb668a;
+            transform: translateY(-4px);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .judul small {
+            color: #d17c9f;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .judul h2 {
+            color: #704f74;
+            font-size: 34px;
+            margin: 7px 0;
+        }
+
+        .judul p {
+            color: #99919c;
+        }
+
+
+        /* ================= BIODATA ================= */
+
+        .biodata {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            box-shadow: 0 8px 25px rgba(90,60,90,0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #915a7b;
+            margin-bottom: 20px;
+        }
+
+        .data {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 11px 0;
+
+            border-bottom: 1px dashed #eadde6;
+
+            gap: 15px;
+        }
+
+        .data strong {
+            color: #865b78;
+        }
+
+        .card p {
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+
+        /* ================= GALERI ================= */
+
+        #galeri {
+            background: #fff3f8;
+        }
+
+        .gallery {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            transition: 0.4s;
+
+            box-shadow: 0 8px 20px rgba(90,60,90,0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+
+        /* ================= PENDIDIKAN ================= */
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education {
+            background: white;
+
+            margin-bottom: 20px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            border-left: 6px solid #d98aaa;
+
+            box-shadow: 0 7px 20px rgba(90,60,90,0.07);
+        }
+
+        .education h3 {
+            color: #8b5b78;
+        }
+
+        .education span {
+            color: #999;
+            font-size: 13px;
+        }
+
+
+        /* ================= ORGANISASI ================= */
+
+        #organisasi {
+            background: #faf5fd;
+        }
+
+        .organization {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .organization-card {
+            text-align: center;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 7px 22px rgba(90,60,90,0.08);
+
+            transition: 0.3s;
+        }
+
+        .organization-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .organization-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .organization-card h3 {
+            color: #8b5a78;
+            margin-bottom: 8px;
+        }
+
+
+        /* ================= KELEBIHAN ================= */
+
+        .advantages {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .advantage {
+            background: white;
+
+            padding: 25px 18px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            box-shadow: 0 7px 20px rgba(90,60,90,0.08);
+
+            transition: 0.3s;
+        }
+
+        .advantage:hover {
+            transform: translateY(-8px);
+            background: #fff0f6;
+        }
+
+        .advantage .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .advantage h3 {
+            color: #8c5978;
+            margin-bottom: 8px;
+        }
+
+        .advantage p {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* ================= PRESTASI ================= */
+
+        #prestasi {
+            background: #fffaf0;
+        }
+
+        .achievement {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: #fff5d9;
+
+            padding: 28px;
+
+            border-radius: 20px;
+
+            border: 1px solid #f1dfb5;
+
+            transition: 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .number {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e7c477;
+            color: white;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .achievement-card h3 {
+            color: #98773d;
+            margin-bottom: 8px;
+        }
+
+
+        /* ================= KOMPETENSI ================= */
+
+        .skills {
+            max-width: 900px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+
+            padding: 22px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 7px 20px rgba(90,60,90,0.07);
+        }
+
+        .skill-title {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 10px;
+
+            font-weight: bold;
+
+            color: #755672;
+        }
+
+        .bar {
+            height: 12px;
+
+            background: #eee9ef;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .bar div {
+            height: 100%;
+
+            border-radius: 20px;
+        }
+
+        .html {
+            width: 90%;
+            background: #df96b4;
+        }
+
+        .css {
+            width: 85%;
+            background: #b7a5d8;
+        }
+
+        .office {
+            width: 88%;
+            background: #9bcfc0;
+        }
+
+        .design {
+            width: 78%;
+            background: #e5c17b;
+        }
+
+
+        /* ================= PORTOFOLIO ================= */
+
+        #portofolio {
+            background: #fff4f9;
+        }
+
+        .portfolio {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(90,60,90,0.08);
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 210px;
+
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 23px;
+        }
+
+        .project-content h3 {
+            color: #8a5978;
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            background: #f6e0eb;
+
+            color: #a05f80;
+
+            font-size: 11px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #eadcf7,
+                #f8dce8
+            );
+
+            color: #6c5873;
+        }
+
+        footer h2 {
+            color: #765374;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin: 5px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .biodata {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .organization {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .profile-photo {
+                width: 230px;
+                height: 230px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .data {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            ♡ My Profile
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#biodata">Biodata</a>
+            </li>
+
+            <li>
+                <a href="#galeri">Galeri</a>
+            </li>
+
+            <li>
+                <a href="#pendidikan">Pendidikan</a>
+            </li>
+
+            <li>
+                <a href="#organisasi">Organisasi</a>
+            </li>
+
+            <li>
+                <a href="#kelebihan">Kelebihan</a>
+            </li>
+
+            <li>
+                <a href="#prestasi">Prestasi</a>
+            </li>
+
+            <li>
+                <a href="#kompetensi">Kompetensi</a>
+            </li>
+
+            <li>
+                <a href="#portofolio">Karya</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ================= PEMBUKA ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="profile-photo">
+
+            <img
+                src="profile.jpeg"
+                alt="Foto Profil Saya"
+            >
+
+        </div>
+
+
+        <div class="hero-text">
+
+            <small>
+                ✨ HELLO, WELCOME TO MY PROFILE
+            </small>
+
+            <h1>
+                Hai, Saya
+                <span>Anisa</span>
+            </h1>
+
+            <h2>
+                Pelajar • Kreatif • Ceria
+            </h2>
+
+            <p>
+                Selamat datang di website profile saya.
+                Di website ini kamu dapat mengenal saya lebih dekat,
+                mulai dari biodata, pendidikan, organisasi,
+                prestasi, kompetensi, hingga portofolio karya saya.
+            </p>
+
+            <a
+                href="#biodata"
+                class="button"
+            >
+                Kenali Saya →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BIODATA ================= -->
+
+    <section id="biodata">
+
+        <div class="judul">
+
+            <small>
+                ABOUT ME
+            </small>
+
+            <h2>
+                Biodata & Tentang Saya
+            </h2>
+
+            <p>
+                Yuk, kenal saya lebih dekat!
+            </p>
+
+        </div>
+
+
+        <div class="biodata">
+
+
+            <div class="card">
+
+                <h3>
+                    👤 Biodata Saya
+                </h3>
+
+
+                <div class="data">
+
+                    <strong>Nama</strong>
+
+                    <span>
+                        Anisa Arvariska
+                    </span>
+
+                </div>
+
+
+                <div class="data">
+
+                    <strong>Tempat, Tanggal Lahir</strong>
+
+                    <span>
+                        Kendal, 06 Januari 2010
+                    </span>
+
+                </div>
+
+
+                <div class="data">
+
+                    <strong>Jenis Kelamin</strong>
+
+                    <span>
+                        Perempuan
+                    </span>
+
+                </div>
+
+
+                <div class="data">
+
+                    <strong>Status</strong>
+
+                    <span>
+                        Pelajar
+                    </span>
+
+                </div>
+
+
+                <div class="data">
+
+                    <strong>Alamat</strong>
+
+                    <span>
+                        Dusun Krajan Desa Puguh RT 01 Rw 02 Kec.Boja Kab.Kendal, Jawa Tengah
+                    </span>
+
+                </div>
+
+
+                <div class="data">
+
+                    <strong>Email</strong>
+
+                    <span>
+                        ninism58@gmail.com
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    🌷 Tentang Saya
+                </h3>
+
+                <p>
+                    Halo! Nama saya Anisa Arvariska.
+                    Saya adalah seorang pelajar yang senang
+                    belajar dan mencoba hal-hal baru.
+                </p>
+
+                <p>
+                    Saya merupakan pribadi yang ramah,
+                    bertanggung jawab, disiplin, dan senang
+                    bekerja sama dengan orang lain.
+                </p>
+
+                <p>
+                    Saya juga tertarik dengan teknologi,
+                    organisasi, dan kegiatan kreatif.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= GALERI ================= -->
+
+    <section id="galeri">
+
+        <div class="judul">
+
+            <small>
+                MY MOMENTS
+            </small>
+
+            <h2>
+                📸 Galeri Foto
+            </h2>
+
+            <p>
+                Kumpulan foto dan momen saya
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img src="fotto11.jpeg" alt="Foto 1">
+
+            <img src="fotto2.jpeg" alt="Foto 2">
+
+            <img src="fotto77.jpeg" alt="Foto 3">
+
+            <img src="fotto88.jpeg" alt="Foto 4">
+
+            <img src="fotto55.jpeg" alt="Foto 5">
+
+            <img src="fotto66.jpeg" alt="Foto 6">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PENDIDIKAN ================= -->
+
+    <section id="pendidikan">
+
+        <div class="judul">
+
+            <small>
+                MY EDUCATION
+            </small>
+
+            <h2>
+                🎓 Riwayat Pendidikan
+            </h2>
+
+            <p>
+                Perjalanan pendidikan saya
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="education">
+
+                <h3>
+                    SD Negeri Puguh
+                </h3>
+
+                <p>
+                    Pendidikan Sekolah Dasar
+                </p>
+
+                <span>
+                    2016 - 2022
+                </span>
+
+            </div>
+
+
+            <div class="education">
+
+                <h3>
+                    SMP Negeri 03 Boja
+                </h3>
+
+                <p>
+                    Pendidikan Sekolah Menengah Pertama
+                </p>
+
+                <span>
+                    2022 - 2025
+                </span>
+
+            </div>
+
+
+            <div class="education">
+
+                <h3>
+                    SMA / SMK
+                </h3>
+
+                <p>
+                    SMK Negeri 03 Kendal
+                </p>
+
+                <span>
+                    2025 - Sekarang
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ORGANISASI ================= -->
+
+    <section id="organisasi">
+
+        <div class="judul">
+
+            <small>
+                MY EXPERIENCE
+            </small>
+
+            <h2>
+                👥 Riwayat Organisasi
+            </h2>
+
+            <p>
+                Organisasi yang pernah saya ikuti
+            </p>
+
+        </div>
+
+
+        <div class="organization">
+
+
+            <div class="organization-card">
+
+                <div class="icon">
+                    👥
+                </div>
+
+                <h3>
+                    OSIS
+                </h3>
+
+                <p>
+                    Mengikuti kegiatan organisasi
+                    siswa di sekolah waktu SMP.
+                </p>
+
+            </div>
+
+
+            <div class="organization-card">
+
+                <div class="icon">
+                    🏕️
+                </div>
+
+                <h3>
+                    Pramuka
+                </h3>
+
+                <p>
+                    Mengikuti berbagai kegiatan
+                    kepramukaan waktu SMP.
+                </p>
+
+            </div>
+
+
+            <div class="organization-card">
+
+                <div class="icon">
+                    🇮🇩
+                </div>
+
+                <h3>
+                    Paskibra
+                </h3>
+
+                <p>
+                    Mengikuti kegiatan Paskibra
+                    sekolah dari SMP hingga Sekarang.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= KELEBIHAN ================= -->
+
+    <section id="kelebihan">
+
+        <div class="judul">
+
+            <small>
+                MY STRENGTHS
+            </small>
+
+            <h2>
+                ⭐ Kelebihan Saya
+            </h2>
+
+            <p>
+                Beberapa kelebihan yang saya miliki
+            </p>
+
+        </div>
+
+
+        <div class="advantages">
+
+
+            <div class="advantage">
+
+                <div class="icon">
+                    💡
+                </div>
+
+                <h3>
+                    Kreatif
+                </h3>
+
+                <p>
+                    Senang membuat dan mencoba
+                    sesuatu yang baru.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="icon">
+                    📚
+                </div>
+
+                <h3>
+                    Rajin Belajar
+                </h3>
+
+                <p>
+                    Memiliki semangat untuk
+                    mempelajari hal baru.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Kerja Sama
+                </h3>
+
+                <p>
+                    Mampu bekerja sama dengan
+                    orang lain.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="icon">
+                    💪
+                </div>
+
+                <h3>
+                    Pantang Menyerah
+                </h3>
+
+                <p>
+                    Berusaha menyelesaikan
+                    tugas dengan baik.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PRESTASI ================= -->
+
+    <section id="prestasi">
+
+        <div class="judul">
+
+            <small>
+                MY ACHIEVEMENT
+            </small>
+
+            <h2>
+                🏆 Prestasi
+            </h2>
+
+            <p>
+                Prestasi yang pernah saya raih
+            </p>
+
+        </div>
+
+
+        <div class="achievement">
+
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    01
+                </div>
+
+                <h3>
+                    Juara 02 potensial Lomba LKBB
+                </h3>
+
+                <p>
+                    Juara lomba tingkat Provinsi di LKBB SAKTI 2
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    02
+                </div>
+
+                <h3>
+                    Juara 02 Caraka lomba LKBB
+                </h3>
+
+                <p>
+                    Lomba LKBB di Nagara Competitions
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    03
+                </div>
+
+                <h3>
+                    Sertifikat
+                </h3>
+
+                <p>
+                    Mendapatkan sertifikat
+                    dari berbagai kegiatan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= KOMPETENSI ================= -->
+
+    <section id="kompetensi">
+
+        <div class="judul">
+
+            <small>
+                MY SKILLS
+            </small>
+
+            <h2>
+                💻 Kompetensi
+            </h2>
+
+            <p>
+                Kemampuan yang saya miliki mudah di ajak untuk berkerja sama,saya bisa memberikan
+                ide ide ataupun gagasan,saya juga mudah berbaur dengan siapapun,saya juga lumayan bisa
+                publik spiking.
+            </p>
+
+        </div>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>HTML</span>
+
+                    <span>90%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div class="html"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>CSS</span>
+
+                    <span>85%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div class="css"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>Microsoft Office</span>
+
+                    <span>88%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div class="office"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>Desain</span>
+
+                    <span>78%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div class="design"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PORTOFOLIO ================= -->
+
+    <section id="portofolio">
+
+        <div class="judul">
+
+            <small>
+                MY PROJECT
+            </small>
+
+            <h2>
+                💼 Portofolio Karya
+            </h2>
+
+            <p>
+                Beberapa karya yang pernah saya buat
+            </p>
+
+        </div>
+
+
+        <div class="portfolio">
+
+
+            <div class="project">
+
+                <img
+                    src="ERD_sistem_laundry.png"
+                    alt="Website Profile"
+                >
+
+                <div class="project-content">
+
+                    <h3>
+                        🌐 ERD
+                    </h3>
+
+                    <p>
+                        Entity Relationship Diagram Laundry
+                    </p>
+
+                    <span class="tag">
+                        Sistem Laundry
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <img
+                    src="DFD1_Sistem_Laundry.png"
+                    alt="Poster Digital"
+                >
+
+                <div class="project-content">
+
+                    <h3>
+                        🎨 DFD 1
+                    </h3>
+
+                    <p>
+                        Data Flow Diagram LV 1
+                    </p>
+
+                    <span class="tag">
+                        Lv1 Laundry
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <img
+                    src="DFD0_Sistem_Laundry.png"
+                    alt="Presentasi"
+                >
+
+                <div class="project-content">
+
+                    <h3>
+                        📊 DFD 0
+                    </h3>
+
+                    <p>
+                        Data Flow Diagram LV 0
+                    </p>
+
+                    <span class="tag">
+                        Laundry LV0
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>
+            ♡ Terima Kasih ♡
+        </h2>
+
+        <p>
+            Terima kasih sudah mengunjungi
+            website profile saya.
+        </p>
+
+        <p>
+            © 2026 Anisa Nisa
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
